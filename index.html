@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		TopGit - Top Github Repositories
+	</title>
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+</head>
+<body>
+
+<header>
+	<div class="row">
+		<div class="col-sm-6 col-xs-12">
+		<div class="logo">
+			<i class="fa fa-github-alt"></i>
+
+		</div>
+		<div class="logo-tag">
+		<span class="logo-name">TopGit</span><br>
+			<span class="tagline">Finding the best GitHub projects for you</span>
+		</div>
+		</div>
+		<div class="col-sm-6 col-xs-12">
+			<div class="form-search">
+				<input class="search" type="search" placeholder="search by language eg python">
+				<span class="search-button"><i class="fa fa-search"></i></span>
+			</div>
+		</div>
+	</div>
+</header>
+
+<article class="results">
+	
+	
+	<div class="found-heading">
+		<h5> We have found <span class="total-count"></span> repositories in <span class="language-name"></span></h5>
+	</div>
+	<div class="initial-subject ">
+		<h5> We have found <span class="total-count"></span> repositories with stars greater than <span class="star-count">500</span></h5>
+	</div>
+	<div class="row">
+		<div class="col-md-8">
+		<div class="result">
+			
+		</div>
+		<div class="load-more"><a href="#" data-url="">Load More</a></div>
+		</div>
+		<div class="col-md-4">
+		<div class="fixed parent-checkbox">
+			<h5 class="light">Filter with number of start</h5>
+
+			<input type="checkbox" name="0" value="0" >&nbsp; greater than 0<br>
+			<input type="checkbox" name="500" value="500" checked="true">&nbsp; greater than 500<br>
+			<input type="checkbox" name="1000" value="10000" >&nbsp; greater than 10000<br>
+			<input type="checkbox" name="2000000" value="20000" >&nbsp; greater than 20000
+
+
+			<br><br>
+
+
+			<h5 class="light">Or add your own minimum number of stars</h5>
+			<input class="number" type="number" name="star_number" placeholder="eg.. 520">
+			<input class="submit" type="submit" placeholder="submit">
+		</div>
+		</div>
+	</div>
+
+</article>
+
+<footer>
+	<h4>My other works links</h4>
+	<ul>
+		<li>My portfolio <a href="http://www.jainakash.in" target="_blank">www.jainakash.in</a></li>
+		<li>JSS InfoConnect <a href="http://210.212.85.155/" target="_blank">Info connect</a></li>
+		<li>Zealicon Fest <a href="http://www.zealicon.in" target="_blank">www.zealicon.in</a></li>
+</footer>
+
+
+<script type="text/html" id="template-result-list">
+	{{#items}}
+	<ul>
+		
+		<li>
+		<a href="{{html_url}}" target="_blank">
+			<div class="row">
+			<div class="col-sm-8 col-xs-12">
+				<h4>{{full_name}}<h4>
+				<h5 class="light">{{description}}</h5>
+				<h5><span class="light">Language:</span> {{language}}</h5>
+			</div>
+			<div class="col-sm-4 col-xs-12 icon-align">
+				<i class="stars fa fa-star"></i> {{stargazers_count}}<br>
+				<i class="forks fa fa-code-fork"></i> {{forks_count}}
+			</div>
+			</div>
+			</a>
+		</li>
+
+	</ul>
+	{{/items}}
+</script>
+<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>
